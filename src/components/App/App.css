@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px 0;
+  border: 20px double #c8e0f4;
+  background-color: #03192778;
+}
+

@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 100px;
+  border: 7px solid #c8e0f4; 
+  border-radius: 20px;
+  background-color: #ba1300be;
+  box-shadow: 3px 3px 5px #031927;
+}
+
+#card-image {
+  width: 80%;
+}
+
+#card-title {
+  font-family: "Bubble Font";
+  font-size: 3rem;
+  color: white;
+}
+
+#card-text {
+  font-family: monospace, Arial;
+  font-size: 1.5rem;
+  color: white;
+}

@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Bubble Font";
+  src: url(./font/kinder-child-kawaii-bubble-font/KinderChildKawaiiBubble-WpnAz.otf);
+}
+
+body {
+  background-image: url(assets/background.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
