@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   margin: 50px 100px;
+  padding: 10px 100px;
   border: 7px solid #c8e0f4; 
   border-radius: 20px;
   background-color: #ba1300be;
@@ -11,11 +12,13 @@
 }
 
 #card-image {
-  width: 80%;
+  width: 100%;
+  background-color: white;
+  border-radius: 100px;
 }
 
 #card-title {
-  font-family: "Bubble Font";
+  font-family: monospace, Arial;
   font-size: 3rem;
   color: white;
 }

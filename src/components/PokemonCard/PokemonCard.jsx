@@ -1,7 +1,7 @@
-import pokemonImg from '../../assets/card-placeholder.jpg';
+import pokemonImg from '../../assets/placeholder-pokemon.png';
 import styles from './PokemonCard.module.css';
 
-export default function PokemonCard() {
+export default function PokemonCard({pokemon}) {
   return(
     <div className={styles.card}>
       <h2 id={styles['card-title']}>Pokemon</h2>
