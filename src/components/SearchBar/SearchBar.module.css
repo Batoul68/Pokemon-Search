@@ -3,9 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 20px;
-  margin: 50px auto 0px;
 }
 
 #search-label {

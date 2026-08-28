@@ -14,7 +14,6 @@ export default function SearchBar() {
       await getPokemon(input)
         .then(data => {
           setPokemon(data);
-          console.log(data);
         });
     }
     catch (error) {
@@ -26,17 +25,17 @@ export default function SearchBar() {
     <>
       <form className={styles.searchContainer} onSubmit={handleSubmit}>
         <label>
-          <h2 id={styles['search-label']}>Find a Pokemon!</h2>
+          <h2 id={styles['search-label']}>Find a Pokémon!</h2>
         </label>
         <input 
           id={styles['search-box']}
           type="text" 
-          placeholder="Enter Pokemon name"
+          placeholder="Enter Pokémon name"
           onChange={e => setInput(e.target.value)}
         />
         <button id={styles['search-button']}type="submit">Search</button>
       </form>
-      <PokemonCard />
+      <PokemonCard pokemon={pokemon ? pokemon : 'unknown'}/>
     </>
   );
 }
