@@ -5,13 +5,19 @@ import styles from './PokemonCard.module.css';
 
 export default function PokemonCard({pokemon}) {
 
-  // Default pokemon card
-  const [pokemonName, setPokemonName] = useState('pokémon');
-  const [pokemonType, setPokemonType] = useState('pokémon type');
-  const [pokemonSprite, setPokemonSprite] = useState(defaultPokemonImg);
+  const [pokemonName, setPokemonName] = useState();
+  const [pokemonType, setPokemonType] = useState();
+  const [pokemonSprite, setPokemonSprite] = useState();
+  
+  useEffect(() => {
 
-  /*
-if (pokemon === 'unknown') {
+    // Default pokemon card
+    if (pokemon === undefined || pokemon.previous === null) {
+      setPokemonName('pokémon');
+      setPokemonType('pokemon type');
+      setPokemonSprite(defaultPokemonImg);
+    }
+    else if (pokemon === 'unknown') {
       setPokemonName('unknown');
       setPokemonType('unknown type');
       setPokemonSprite(unknownPokemonImg);
@@ -20,8 +26,10 @@ if (pokemon === 'unknown') {
       setPokemonName(pokemon?.name);
       setPokemonType(pokemon?.types?.[0]?.type?.name);
       setPokemonSprite(pokemon?.sprites?.front_default);
-    } 
-  */
+    }
+  }, [pokemon]);
+  
+
   return(
     <div className={styles.card}>
       <h2 id={styles['card-title']}>{pokemonName}</h2>

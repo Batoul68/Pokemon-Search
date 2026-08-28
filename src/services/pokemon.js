@@ -6,6 +6,5 @@ export async function getPokemon(name) {
         throw new Error(`Couldn't find that Pokemon: ${response.statusText}`);
       }
       return response.json();
-    })
-    .catch(error => console.error(error));
+    });
 }

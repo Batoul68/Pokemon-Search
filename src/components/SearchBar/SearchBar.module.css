@@ -41,3 +41,8 @@
   cursor: pointer;
 }
 
+#search-button:hover {
+  background-color: #f54d3bbe;
+  font-size: 2rem;
+}
+

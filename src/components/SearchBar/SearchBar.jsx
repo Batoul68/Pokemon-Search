@@ -5,20 +5,20 @@ import PokemonCard from '../PokemonCard/PokemonCard.jsx';
 
 export default function SearchBar() {
 
-  const [pokemon, setPokemon] = useState({});
+  const [pokemon, setPokemon] = useState();
   const [input, setInput] = useState('');
 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await getPokemon(input)
-        .then(data => {
-          setPokemon(data);
-        });
+      const data = await getPokemon(input);
+      setPokemon(data);
     }
     catch (error) {
       console.error(error);
+      setPokemon('unknown');
     }
+    setInput('');
   }
 
   return(
@@ -31,11 +31,12 @@ export default function SearchBar() {
           id={styles['search-box']}
           type="text" 
           placeholder="Enter Pokémon name"
+          value={input}
           onChange={e => setInput(e.target.value)}
         />
         <button id={styles['search-button']}type="submit">Search</button>
       </form>
-      <PokemonCard pokemon={pokemon ? pokemon : 'unknown'}/>
+      <PokemonCard pokemon={pokemon}/>
     </>
   );
 }
