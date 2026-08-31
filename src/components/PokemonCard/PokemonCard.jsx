@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import defaultPokemonImg from '../../assets/placeholder-pokemon.png';
 import unknownPokemonImg from '../../assets/unknown-pokemon.png';
 import styles from './PokemonCard.module.css';
@@ -29,7 +30,8 @@ function getPokemonDisplay(pokemon) {
 
 export default function PokemonCard({pokemon}) {
 
-  const displayPokemon = getPokemonDisplay(pokemon);
+  // Only re-render if pokemon value changes
+  const displayPokemon = useMemo(() => getPokemonDisplay(pokemon), [pokemon]);
 
   return(
     <div className={styles.card}>
