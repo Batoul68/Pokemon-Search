@@ -1,5 +1,5 @@
 import styles from './SearchBar.module.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { getPokemon } from '../../services/pokemon.js';
 import PokemonCard from '../PokemonCard/PokemonCard.jsx';
 
