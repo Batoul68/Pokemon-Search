@@ -4,6 +4,7 @@ import unknownPokemonImg from '../../assets/unknown-pokemon.png';
 import styles from './PokemonCard.module.css';
 
 function getPokemonDisplay(pokemon) {
+  
   // Default pokemon card
   if (pokemon === undefined || pokemon.previous === null) {
     return {
