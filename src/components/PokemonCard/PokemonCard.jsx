@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import defaultPokemonImg from '../../assets/placeholder-pokemon.png';
 import unknownPokemonImg from '../../assets/unknown-pokemon.png';
 import styles from './PokemonCard.module.css';
 
 function getPokemonDisplay(pokemon) {
-  
+
   // Default pokemon card
   if (pokemon === undefined || pokemon.previous === null) {
     return {
@@ -31,7 +31,7 @@ function getPokemonDisplay(pokemon) {
 
 export default function PokemonCard({pokemon}) {
 
-  // Only re-render if pokemon value changes
+  // Only e-render if pokemon value changes
   const displayPokemon = useMemo(() => getPokemonDisplay(pokemon), [pokemon]);
 
   return(
