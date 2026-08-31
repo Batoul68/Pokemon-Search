@@ -2,32 +2,34 @@ import defaultPokemonImg from '../../assets/placeholder-pokemon.png';
 import unknownPokemonImg from '../../assets/unknown-pokemon.png';
 import styles from './PokemonCard.module.css';
 
-export default function PokemonCard({pokemon}) {
-
-  let displayPokemon;
-  
+function getPokemonDisplay(pokemon) {
   // Default pokemon card
   if (pokemon === undefined || pokemon.previous === null) {
-    displayPokemon = {
+    return {
       name: 'pokémon',
       type: 'pokemon type',
       sprite: defaultPokemonImg
-    }
+    };
   }
   else if (pokemon === 'unknown') {
-    displayPokemon = {
+    return {
       name: 'unknown',
       type: 'unknown type',
       sprite: unknownPokemonImg
-    }
+    };
   }
   else {
-    displayPokemon = {
+    return {
       name: pokemon?.name,
       type: pokemon?.types?.[0]?.type?.name,
       sprite: pokemon?.sprites?.front_default
-    }
+    };
   }
+}
+
+export default function PokemonCard({pokemon}) {
+
+  const displayPokemon = getPokemonDisplay(pokemon);
 
   return(
     <div className={styles.card}>
